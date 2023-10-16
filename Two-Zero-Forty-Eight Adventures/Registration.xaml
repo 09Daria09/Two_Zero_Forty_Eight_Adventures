@@ -1,0 +1,75 @@
+﻿<Window x:Class="Two_Zero_Forty_Eight_Adventures.Registration"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Two_Zero_Forty_Eight_Adventures"
+        mc:Ignorable="d"
+        Title="Registration" Height="350" Width="400"
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent" WindowStartupLocation="CenterScreen">
+
+    <Grid Margin="0">
+        <Grid.Resources>
+            <Style TargetType="Button">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="2">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#4A3D1E"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Grid.Resources>
+
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#3D1E4A" Offset="0"/>
+                <GradientStop Color="#208D99" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Button Content="X" VerticalAlignment="Top" Foreground="White" Background="Transparent" BorderBrush="Transparent" Margin="375,10,0,0" FontSize="18" Click="CloseButton_Click" HorizontalAlignment="Left" Width="15"/>
+
+        <StackPanel VerticalAlignment="Center" Margin="40">
+            <StackPanel.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="BorderBrush" Value="Transparent"/>
+                    <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                    <Setter Property="Height" Value="40"/>
+                    <Setter Property="Effect">
+                        <Setter.Value>
+                            <DropShadowEffect Color="Black" Opacity="0.2" BlurRadius="4" ShadowDepth="2"/>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#508D99"/>
+                            <Setter Property="Effect">
+                                <Setter.Value>
+                                    <DropShadowEffect Color="Black" Opacity="0.4" BlurRadius="8" ShadowDepth="4"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </StackPanel.Resources>
+
+            <TextBlock Text="Two Zero Forty Eight" FontSize="24" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center"/>
+            <TextBlock Text="Регистрация/Вход" FontSize="24" FontWeight="Bold" Foreground="White" Margin="0,0,0,20" HorizontalAlignment="Center"/>
+            <TextBox x:Name="usernameTextBox" Text="Имя пользователя" Height="40" Foreground="White" Background="#50208D99" BorderBrush="#208D99" BorderThickness="2" Padding="10" Margin="0,0,0,10" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+            <TextBox x:Name="passwordBox" Text="Пароль" Height="40" Foreground="White" Background="#50208D99" BorderBrush="#208D99" BorderThickness="2" Padding="10" Margin="0,0,0,20" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+            <Button Content="Зарегистрироваться" Background="#208D99" Margin="0,0,0,10" Click="Button_Click"/>
+            <Button Content="Войти" Background="#3D1E4A" Click="Button_Click_1"/>
+        </StackPanel>
+
+
+    </Grid>
+</Window>
